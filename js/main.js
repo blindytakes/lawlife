@@ -72,8 +72,3 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-/* ── Update footer year automatically ── */
-const yearEl = document.querySelector('.footer-copy');
-if (yearEl) {
-  yearEl.innerHTML = yearEl.innerHTML.replace('2025', new Date().getFullYear());
-}

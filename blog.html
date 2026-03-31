@@ -17,6 +17,9 @@
   <meta property="og:title" content="Legal Insights & Resources | Keibler Law Group" />
   <meta property="og:description" content="Legal insights, guides, and resources from Keibler Law Group. Personal injury, business litigation, and your rights in SC & NC." />
   <meta property="og:url" content="https://keiblerlawgroup.com/blog.html" />
+  <meta property="og:image" content="https://keiblerlawgroup.com/images/og-image.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:site_name" content="Keibler Law Group" />
 
   <!-- Fonts -->
@@ -367,7 +370,7 @@
            ============================================================ -->
       <div class="posts-grid">
 
-        <article class="post-card" data-category="Car &amp; Truck Accidents">
+        <a href="index.html#contact" class="post-card" data-category="Car &amp; Truck Accidents" style="text-decoration:none;color:inherit">
           <div class="post-card-img">
             <svg class="post-card-img-icon" width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"/><path d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"/></svg>
           </div>
@@ -386,7 +389,7 @@
               </span>
             </div>
           </div>
-        </article>
+        </a>
 
         <a href="blog/insurance-company-secrets.html" class="post-card" data-category="Know Your Rights" style="text-decoration:none;color:inherit">
           <div class="post-card-img">
@@ -409,7 +412,7 @@
           </div>
         </a>
 
-        <article class="post-card" data-category="Business Litigation">
+        <a href="index.html#contact" class="post-card" data-category="Business Litigation" style="text-decoration:none;color:inherit">
           <div class="post-card-img">
             <svg class="post-card-img-icon" width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
           </div>
@@ -428,9 +431,9 @@
               </span>
             </div>
           </div>
-        </article>
+        </a>
 
-        <article class="post-card" data-category="Know Your Rights">
+        <a href="index.html#contact" class="post-card" data-category="Know Your Rights" style="text-decoration:none;color:inherit">
           <div class="post-card-img">
             <svg class="post-card-img-icon" width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
           </div>
@@ -449,9 +452,9 @@
               </span>
             </div>
           </div>
-        </article>
+        </a>
 
-        <article class="post-card" data-category="Personal Injury">
+        <a href="index.html#contact" class="post-card" data-category="Personal Injury" style="text-decoration:none;color:inherit">
           <div class="post-card-img">
             <svg class="post-card-img-icon" width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
           </div>
@@ -470,7 +473,7 @@
               </span>
             </div>
           </div>
-        </article>
+        </a>
 
         <a href="blog/why-chase-started-keibler-law.html" class="post-card" data-category="Firm News" style="text-decoration:none;color:inherit">
           <div class="post-card-img">
@@ -502,10 +505,11 @@
         <span class="label" style="justify-content:center;display:inline-flex">Stay Informed</span>
         <h2 style="margin-top:0.75rem">Legal Updates,<br/><em>Delivered.</em></h2>
         <p>Get practical legal insights, firm updates, and know-your-rights guides delivered to your inbox. No spam, no fluff.</p>
-        <div class="newsletter-form">
-          <input type="email" placeholder="Enter your email" aria-label="Email address" />
-          <button class="btn btn-primary">Subscribe</button>
+        <div class="newsletter-form" id="newsletterForm">
+          <input type="email" id="newsletterEmail" placeholder="Enter your email" aria-label="Email address" required />
+          <button class="btn btn-primary" id="newsletterBtn" onclick="handleNewsletterSubmit()">Subscribe</button>
         </div>
+        <p id="newsletterSuccess" style="display:none;color:var(--clr-gold);font-size:0.95rem;margin-top:1rem;">Thank you for subscribing! You'll receive our next update.</p>
       </div>
 
     </div>
@@ -555,7 +559,7 @@
       </div>
       <div class="footer-bottom">
         <div class="footer-copy">
-          &copy; 2025 Keibler Law Group. All rights reserved.
+          &copy; <script>document.write(new Date().getFullYear())</script> Keibler Law Group. All rights reserved.
         </div>
         <div class="footer-disclaimer">
           <strong>SC Disclaimer:</strong> The information on this site is not formal legal advice and does not form an attorney-client relationship. Every case is different. Prior results do not guarantee future outcomes. Chase Keibler is responsible for this advertisement. Cases handled primarily at 700 Saturn Parkway, Columbia, SC 29212. <strong>NC Disclaimer:</strong> North Carolina matters handled by the firm's NC-licensed attorneys. No attorney-client relationship is created by use of this website.
@@ -601,11 +605,19 @@
       });
     });
 
-    /* ── Update footer year ── */
-    const yearEl = document.querySelector('.footer-copy');
-    if (yearEl) {
-      yearEl.innerHTML = yearEl.innerHTML.replace('2025', new Date().getFullYear());
+    /* ── Newsletter form ── */
+    function handleNewsletterSubmit() {
+      var email = document.getElementById('newsletterEmail');
+      if (!email.value.trim() || !email.validity.valid) {
+        email.setAttribute('aria-invalid', 'true');
+        return;
+      }
+      email.removeAttribute('aria-invalid');
+      // REPLACE: Wire up newsletter backend (Mailchimp, ConvertKit, etc.)
+      document.getElementById('newsletterForm').style.display = 'none';
+      document.getElementById('newsletterSuccess').style.display = '';
     }
+
   </script>
 
 </body>
