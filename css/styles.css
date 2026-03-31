@@ -30,6 +30,26 @@
 }
 
 /* ============================================================
+   SKIP LINK (Accessibility)
+   ============================================================ */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: var(--clr-gold);
+  color: #09090E;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.85rem;
+  z-index: 10000;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* ============================================================
    RESET & BASE
    ============================================================ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -43,7 +63,8 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
-img { display: block; max-width: 100%; }
+img { display: block; max-width: 100%; height: auto; }
+img[loading="lazy"] { background: var(--clr-surface-2); }
 a { color: inherit; text-decoration: none; }
 ul { list-style: none; }
 button { cursor: pointer; border: none; background: none; font: inherit; }
@@ -973,6 +994,9 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .form-group textarea:focus { border-color: var(--clr-gold); }
 .form-group select { appearance: none; cursor: pointer; }
 .form-group select option { background: var(--clr-surface); }
+.form-group input[aria-invalid="true"],
+.form-group select[aria-invalid="true"],
+.form-group textarea[aria-invalid="true"] { border-color: var(--clr-danger); }
 .form-group textarea { resize: vertical; min-height: 120px; }
 .form-note {
   font-size: 0.75rem;

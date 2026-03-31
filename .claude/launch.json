@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "lawlife",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8080", "--directory", "/Users/alexsalesi/lawlife/.claude/worktrees/fervent-banzai"],
+      "port": 8080
+    }
+  ]
+}

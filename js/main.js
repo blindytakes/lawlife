@@ -44,10 +44,10 @@ function handleFormSubmit() {
   required.forEach(id => {
     const el = document.getElementById(id);
     if (!el.value.trim()) {
-      el.style.borderColor = 'var(--clr-danger)';
+      el.setAttribute('aria-invalid', 'true');
       valid = false;
     } else {
-      el.style.borderColor = '';
+      el.removeAttribute('aria-invalid');
     }
   });
   if (!valid) return;
