@@ -19,7 +19,7 @@
   --font-body:       'DM Sans', system-ui, sans-serif;
 
   /* --- Spacing --- */
-  --section-pad:     clamp(5rem, 10vw, 9rem);
+  --section-pad:     clamp(2.5rem, 4vw, 3.5rem);
   --container:       1160px;
   --radius:          4px;
   --radius-lg:       12px;
@@ -285,12 +285,17 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
    ============================================================ */
 #hero {
   position: relative;
-  min-height: 100vh;
   display: flex;
-  align-items: center;
-  padding-top: 7rem;
-  padding-bottom: var(--section-pad);
+  align-items: flex-start;
+  padding-top: clamp(5.5rem, 12vh, 7rem);
+  padding-bottom: clamp(3rem, 6vw, 5rem);
   overflow: hidden;
+}
+#hero > .container {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 3rem;
+  align-items: start;
 }
 .hero-bg {
   position: absolute;
@@ -318,7 +323,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   display: inline-flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
 }
 .hero-eyebrow .label { font-size: 0.68rem; }
 .hero-eyebrow .badge {
@@ -358,7 +363,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   align-items: center;
 }
 .hero-trust {
-  margin-top: 4rem;
+  margin-top: 2.5rem;
   display: flex;
   align-items: center;
   gap: 2rem;
@@ -396,6 +401,93 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   width: 1px;
   height: 2.5rem;
   background: linear-gradient(to bottom, var(--clr-gold-dim), transparent);
+}
+
+/* --- Hero Form Card --- */
+.hero-form-card {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  position: relative;
+  z-index: 2;
+  margin-top: 3rem;
+}
+.hero-form-header {
+  margin-bottom: 1rem;
+}
+.hero-form-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+.hero-form-header p {
+  font-size: 0.85rem;
+  color: var(--clr-muted);
+}
+.hero-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.hero-form input,
+.hero-form select,
+.hero-form textarea {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  background: var(--clr-surface-2);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius);
+  color: var(--clr-white);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  transition: border-color var(--dur) var(--ease);
+}
+.hero-form input::placeholder,
+.hero-form textarea::placeholder {
+  color: var(--clr-muted);
+}
+.hero-form select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%238A8799' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  cursor: pointer;
+}
+.hero-form select option {
+  background: var(--clr-surface);
+  color: var(--clr-white);
+}
+.hero-form input:focus,
+.hero-form select:focus,
+.hero-form textarea:focus {
+  outline: none;
+  border-color: var(--clr-gold);
+}
+.hero-form textarea {
+  resize: vertical;
+  min-height: 70px;
+}
+.hero-form-btn {
+  width: 100%;
+  justify-content: center;
+  margin-top: 0.25rem;
+}
+.hero-form-disclaimer {
+  margin-top: 0.75rem;
+  font-size: 0.72rem;
+  color: var(--clr-muted);
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  #hero > .container {
+    grid-template-columns: 1fr;
+  }
+  .hero-form-card {
+    max-width: 480px;
+  }
 }
 
 /* ============================================================
