@@ -153,8 +153,8 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 /* Fade-in animation */
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+  transform: translateY(20px);
+  transition: opacity 0.45s var(--ease), transform 0.45s var(--ease);
 }
 .reveal.visible { opacity: 1; transform: none; }
 .reveal-delay-1 { transition-delay: 0.1s; }
